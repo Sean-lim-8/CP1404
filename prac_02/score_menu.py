@@ -15,3 +15,6 @@ def print_results(score):
     results = determine_score(score)
     print(f"Results:{results}")
 
+def print_stars(score):
+    print(int(score) * "*")
+
