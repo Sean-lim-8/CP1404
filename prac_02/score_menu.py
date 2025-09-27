@@ -5,3 +5,13 @@ Program to display a menu to get a score and print results and stars depending o
 from score import determine_score
 
 MENU = "(G)et a valid score\n(P)rint result\n(S)how stars\n(Q)uit"
+
+def main():
+    print(MENU)
+    choice = input("Please choose an option: ").upper()
+    score = determine_score(MENU)
+
+def print_results(score):
+    results = determine_score(score)
+    print(f"Results:{results}")
+
