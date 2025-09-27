@@ -35,6 +35,7 @@ def main():
     print("Farewell")
 
 def determine_score(score):
+    """Determines user's score"""
     if score < 0 or score > 100:
         message = "Invalid score"
     elif score >= 90:
@@ -46,10 +47,12 @@ def determine_score(score):
     return message
 
 def print_results(score):
+    """Prints results in a message"""
     results = determine_score(score)
     print(f"Results:{results}")
 
 def print_stars(score):
+    """Prints stars according to the score"""
     print(int(score) * "*")
 
 main()
