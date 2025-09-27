@@ -1,5 +1,6 @@
 """
-gets password and prints the password length in stars
+CP1404 - Practical 2
+Program that gets password and prints the password length in stars
 """
 PASSWORD_LENGTH = 8
 
