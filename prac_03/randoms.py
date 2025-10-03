@@ -10,3 +10,8 @@ print(random.uniform(2.5,5.5)) # 2.524204796960463
 
 #Q3. I saw 2.524204796960463. The smallest number i could have seen is 2.5 and the largest would have been 5.5.
 
+"""Program to produce a random number between 1 and 100 inclusive"""
+
+import random
+
+print(random.randint(1, 100))
