@@ -19,6 +19,10 @@ number_of_days = 0
 price = INITIAL_PRICE
 print(f"${price:,.2f}")
 
+out_file = open("capitalist.txt", "w") # opens a file for writing
+out_file.write(f"Initial price: ${price:,.2f}\n") # writes the initial price
+print(f"Initial price: ${price:,.2f}")
+
 while MIN_PRICE <= price <= MAX_PRICE:
     price_change = 0
     number_of_days += 1
@@ -34,4 +38,9 @@ while MIN_PRICE <= price <= MAX_PRICE:
         price_change = random.uniform(-MAX_DECREASE, 0)
 
     price *= (1 + price_change)
+
+    out_file.write(f"On day {number_of_days} price is: ${price:,.2f}\n")
     print(f"On day {number_of_days} price is: ${price:,.2f}")
+
+
+out_file.close()
