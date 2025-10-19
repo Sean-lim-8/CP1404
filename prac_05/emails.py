@@ -2,7 +2,7 @@
 CP1404 Practical 5
 Emails
 Estimate: 30 minutes
-Actual:
+Actual: 32 minutes
 """
 email_to_name = {}
 
