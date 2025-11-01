@@ -4,3 +4,6 @@ guitar test
 Estimate: 20 minutes
 Actual:
 """
+
+from guitar import Guitar
+
