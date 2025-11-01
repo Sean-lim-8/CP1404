@@ -17,6 +17,9 @@ class ProgrammingLanguage:
 
     def is_dynamic(self):
         """Determines if the language is dynamically typed"""
-        return self.typing == "dynamic"
+        return self.typing == "Dynamic"
 
+    def __str__(self):
+        """Returns a string of information about the programming language"""
+        return f"{self.name}, {self.typing} Typing, Reflection={self.reflection}, First appeared in {self.year}"
 
