@@ -2,7 +2,7 @@
 CP1404 - practical 6
 Languages
 Estimate: 20 minutes
-Actual:
+Actual: 21 minutes
 """
 
 from programming_language import ProgrammingLanguage
