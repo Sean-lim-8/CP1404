@@ -2,7 +2,7 @@
 CP1404 - Practical 6
 Guitars
 Estimate: 25 minutes
-Actual:
+Actual: 35 minutes
 """
 
 from guitar import Guitar
