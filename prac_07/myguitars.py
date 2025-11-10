@@ -9,8 +9,11 @@ from guitar import Guitar
 
 def main():
     """Main function to read, display, and sort guitars"""
-    print("My guitars")
-    guitars = read_guitars("guitar.csv")
+    print("My guitars:")
+    guitars = read_guitars("guitars.csv")
+
+    guitars.sort()
+    display_guitars(guitars)
 
 
 def read_guitars(filename):
@@ -27,7 +30,12 @@ def read_guitars(filename):
                 guitars.append(guitar)
     return guitars
 
+def display_guitars(guitars):
+    """Displays a list of guitars"""
+    for guitar in guitars:
+        print(guitar)
 
+main()
 
 
 
