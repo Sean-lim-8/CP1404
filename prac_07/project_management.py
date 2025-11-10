@@ -48,6 +48,9 @@ def main():
         elif choice == "F":
             filter_projects(projects)
 
+        elif choice == "A":
+            add_projects(projects)
+
 
 
 
@@ -109,6 +112,21 @@ def filter_projects(projects):
             print(projects)
     except ValueError:
         print("Invalid date.")
+
+
+def add_projects(projects):
+    """Add a new project"""
+    print("Let's add a new project")
+    name = input("Name: ")
+    start_date = input("Start date (dd/mm/yy): ")
+    priority = int(input("Priority: "))
+    cost = float(input("Cost estimate : $"))
+    completion = int(input("Percent complete: "))
+
+    start_date = datetime.strptime(start_date, "%d/%m/%Y").date()
+    new_project = Project(name, start_date, priority, cost, completion)
+    projects.append(new_project)
+
 
 
 
