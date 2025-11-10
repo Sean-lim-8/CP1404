@@ -110,7 +110,7 @@ def display_projects(projects):
 
 def filter_projects(projects):
     """Filter projects by date"""
-    date = input("Show projects that start after date (dd/mm/yy): ")
+    date = input("Show projects that start after date (dd/mm/YYYY): ")
     try:
         filter_date = datetime.strptime(date, "%d/%m/%Y").date()
         filtered_projects  = [p for p in projects if p.start_date >= filter_date]
@@ -126,7 +126,7 @@ def add_projects(projects):
     """Add a new project"""
     print("Let's add a new project")
     name = input("Name: ")
-    start_date = input("Start date (dd/mm/yy): ")
+    start_date = input("Start date (dd/mm/YYYY): ")
     priority = int(input("Priority: "))
     cost = float(input("Cost estimate : $"))
     completion = int(input("Percent complete: "))
