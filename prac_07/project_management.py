@@ -7,6 +7,7 @@ Actual:
 
 from datetime import datetime
 from project import Project
+from operator import attrgetter
 
 FILENAME = "projects.txt"
 
@@ -43,6 +44,10 @@ def main():
 
         elif choice == "D":
             display_projects(projects)
+
+        elif choice == "F":
+            filter_projects(projects)
+
 
 
 
@@ -90,5 +95,21 @@ def display_projects(projects):
     print("Completed projects: ")
     for project in completed_projects:
         print(f"  {project}")
+
+
+def filter_projects(projects):
+    """Filter projects by date"""
+    date = input("Show projects that start after date (dd/mm/yy): ")
+    try:
+        filter_date = datetime.strptime(date, "%d/%m/%Y").date()
+        filtered_projects  = [p for p in projects if p.start_date >= filter_date]
+        filtered_projects.sort(key=attrgetter('start_date'))
+
+        for projects in filtered_projects:
+            print(projects)
+    except ValueError:
+        print("Invalid date.")
+
+
 
 main()
