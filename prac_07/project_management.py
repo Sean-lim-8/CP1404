@@ -70,10 +70,10 @@ def load_projects(filename):
         with open(filename, 'r') as file:
             file.readline()
             for line in file:
-                parts = line.strip().split()('\t')
+                parts = line.strip().split('\t')
                 if len(parts) == 5:
                     name = parts[0]
-                    start_date = datetime.datetime.strptime(parts[1], "%d/%m/%Y").date()
+                    start_date = datetime.strptime(parts[1], "%d/%m/%Y").date()
                     priority = int(parts[2])
                     cost = float(parts[3])
                     completion = int(parts[4])
@@ -84,10 +84,10 @@ def load_projects(filename):
 
 def save_projects(filename, projects):
     """Save projects to a file"""
-    with open(filename, 'w') as in_file:
-        in_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
+    with open(filename, 'w') as out_file:
+        out_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
         for project in projects:
-            in_file.write(f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t"
+            out_file.write(f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t"
                        f"{project.priority}\t{project.cost}\t{project.completion}\n")
     print(f"Saved {len(projects)} projects to {filename}.")
 
