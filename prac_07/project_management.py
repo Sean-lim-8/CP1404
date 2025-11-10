@@ -51,7 +51,15 @@ def main():
         elif choice == "A":
             add_projects(projects)
 
+        elif choice == "U":
+            update_projects(projects)
 
+        elif choice == "Q":
+            confirm = input(f"Would you like to save to {FILENAME}? ").lower()
+            if confirm in ['yes', 'y']:
+                save_projects(FILENAME, projects)
+        else:
+            print("Invalid input.")
 
 
 
@@ -127,8 +135,28 @@ def add_projects(projects):
     new_project = Project(name, start_date, priority, cost, completion)
     projects.append(new_project)
 
-    
 
+def update_projects(projects):
+    """update a project's completion status or priority"""
+    for i, project in enumerate(projects):
+        print(f"Project {i} {project}")
+
+    try:
+        project_choice = int(input("Project choice: "))
+        if 0 <= project_choice < len(projects):
+            project = projects[project_choice]
+            print(project)
+
+            new_percentage = input("New percentage: ")
+            if new_percentage:
+                project.completion = int(new_percentage)
+
+            new_priority = input("New priority: ")
+            if new_priority:
+                project.priority = int(new_priority)
+
+    except ValueError:
+        print("Invalid project number")
 
 
 
