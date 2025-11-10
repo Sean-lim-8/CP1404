@@ -41,6 +41,11 @@ def main():
             save_projects(filename, projects)
             print(f"Projects saved to {filename}")
 
+        elif choice == "D":
+            display_projects(projects)
+
+
+
 
 def load_projects(filename):
     """Load projects from a file"""
@@ -69,5 +74,21 @@ def save_projects(filename, projects):
             in_file.write(f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t"
                        f"{project.priority}\t{project.cost}\t{project.completion}\n")
     print(f"Saved {len(projects)} projects to {filename}.")
+
+
+def display_projects(projects):
+    """Display projects grouped by completion status"""
+    incomplete_projects = [p for p in projects if not p.is_complete()]
+    completed_projects = [p for p in projects if p.is_complete()]
+    incomplete_projects.sort()
+    completed_projects.sort()
+
+    print("Incomplete projects: ")
+    for project in incomplete_projects:
+        print(f"  {project}")
+
+    print("Completed projects: ")
+    for project in completed_projects:
+        print(f"  {project}")
 
 main()
