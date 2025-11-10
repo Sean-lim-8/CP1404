@@ -20,4 +20,11 @@ class Project:
         """Return a string representation of the project"""
         return (f"Project('{self.name}', {self.start_date}, {self.priority}, {self.cost}, {self.completion})")
 
+    def __lt__(self, other):
+        """Compare projects by priority"""
+        return self.priority < other.priority
+
+    def is_complete(self):
+        """Return True if the project is complete"""
+        return self.completion == 100
 
