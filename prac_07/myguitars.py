@@ -5,12 +5,29 @@ Estimate: 30 minutes
 Actual:
 """
 
-class Guitar:
-    """Represent guitar with name, year, cost"""
-    def __init__(self, name, year, cost):
-        self.name = name
-        self.year = year
-        self.cost = cost
+from guitar import Guitar
 
-    def __str__(self):
-        return f"{self.name} {self.year} {self.cost}"
+def main():
+    """Main function to read, display, and sort guitars"""
+    print("My guitars")
+    guitars = read_guitars("guitar.csv")
+
+
+def read_guitars(filename):
+    """Read guitars from a csv file and changes it into a list of objects"""
+    guitars = []
+    with open(filename, 'r') as in_file:
+        for line in in_file:
+            parts = line.strip().split(',')
+            if len(parts) == 3:
+                name = parts[0]
+                year = int(parts[1])
+                cost = float(parts[2])
+                guitar = Guitar(name, year, cost)
+                guitars.append(guitar)
+    return guitars
+
+
+
+
+
