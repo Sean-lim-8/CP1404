@@ -4,6 +4,7 @@ MyGuitar
 Estimate: 30 minutes
 Actual:
 """
+import csv
 
 from guitar import Guitar
 
@@ -16,6 +17,10 @@ def main():
     display_guitars(guitars)
 
     add_guitars(guitars)
+    save_guitar("guitars.csv", guitars)
+
+    print("Updated guitar list:")
+    display_guitars(guitars)
 
 
 def read_guitars(filename):
@@ -50,6 +55,13 @@ def add_guitars(guitars):
         print(f"{guitar} added.")
         name = input("Enter guitar name: ")
 
+
+def save_guitar(filename, guitars):
+    """saves the guitar to a csv file"""
+    with open(filename, 'w') as out_file:
+        writer = csv.writer(out_file)
+        for guitar in guitars:
+            writer.writerow([guitar.name, guitar.year, guitar.cost])
 
 main()
 
