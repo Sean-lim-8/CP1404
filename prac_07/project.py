@@ -15,3 +15,9 @@ class Project:
         return (f"{self.name}, start: {self.start_date.strftime('%d/%m/%Y')}, "
                 f"priority {self.priority}, estimate: ${self.cost:.2f}, "
                 f"completion: {self.completion}%")
+
+    def __repr__(self):
+        """Return a string representation of the project"""
+        return (f"Project('{self.name}', {self.start_date}, {self.priority}, {self.cost}, {self.completion})")
+
+
