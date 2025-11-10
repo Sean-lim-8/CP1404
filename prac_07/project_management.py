@@ -2,7 +2,7 @@
 CP1404 Practical 7
 Project Management
 Estimate: 1 hour
-Actual:
+Actual: 2 hours 10 minutes
 """
 
 from datetime import datetime
