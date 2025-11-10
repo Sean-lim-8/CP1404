@@ -127,6 +127,8 @@ def add_projects(projects):
     new_project = Project(name, start_date, priority, cost, completion)
     projects.append(new_project)
 
+    
+
 
 
 
