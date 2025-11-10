@@ -116,8 +116,8 @@ def filter_projects(projects):
         filtered_projects  = [p for p in projects if p.start_date >= filter_date]
         filtered_projects.sort(key=attrgetter('start_date'))
 
-        for projects in filtered_projects:
-            print(projects)
+        for project in filtered_projects:
+            print(project)
     except ValueError:
         print("Invalid date.")
 
