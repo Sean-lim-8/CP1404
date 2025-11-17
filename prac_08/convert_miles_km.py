@@ -16,5 +16,17 @@ class MilesConverterApp(App):
         self.root = Builder.load_file("convert_miles_km.kv")
         return self.root
 
+def get_valid_miles(self):
+    """Validates and returns a value from the text field"""
+    try:
+        return float(self.root.ids.input_miles.text)
+    except ValueError:
+        return 0.0
+
+def handle_convert(self):
+    """converts miles into kilometres"""
+
+
+
 
 MilesConverterApp().run()
