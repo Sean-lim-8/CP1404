@@ -2,7 +2,7 @@
 CP1404 Practical 8
 Convert miles to kilometres
 Estimate: 30 minutes
-Actual:
+Actual: 55 minutes
 """
 
 from kivy.app import App
