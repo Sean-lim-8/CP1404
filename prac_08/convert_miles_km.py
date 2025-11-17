@@ -32,7 +32,7 @@ class MilesConverterApp(App):
     def handle_increment(self, change):
         """Increase or decrease the input value"""
         miles = self.get_valid_miles() + change
-        self.root.ids.input_miles.text = float(miles)
+        self.root.ids.input_miles.text = str(miles)
         self.handle_convert()
 
 
