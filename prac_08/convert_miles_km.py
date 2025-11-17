@@ -31,7 +31,7 @@ def handle_convert(self):
 
 def handle_increment(self, change):
     """Increase or decrease the input value"""
-    miles = self.get_valid_miles() + amount
+    miles = self.get_valid_miles() + change
     self.root.ids.input_miles.text = float(miles)
     self.handle_convert()
 
