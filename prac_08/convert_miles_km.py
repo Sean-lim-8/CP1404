@@ -29,7 +29,11 @@ def handle_convert(self):
     km = miles * MILES_TO_KM
     self.root.ids.output_label.text = f"{km:.2f}"
 
-
+def handle_increment(self, change):
+    """Increase or decrease the input value"""
+    miles = self.get_valid_miles() + amount
+    self.root.ids.input_miles.text = float(miles)
+    self.handle_convert()
 
 
 
