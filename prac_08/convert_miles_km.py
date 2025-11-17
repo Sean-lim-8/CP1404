@@ -25,6 +25,10 @@ def get_valid_miles(self):
 
 def handle_convert(self):
     """converts miles into kilometres"""
+    miles = self.get_valid_miles()
+    km = miles * MILES_TO_KM
+    self.root.ids.output_label.text = f"{km:.2f}"
+
 
 
 
