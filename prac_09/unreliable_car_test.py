@@ -11,4 +11,11 @@ def main():
     weird_car = UnreliableCar("Weird Car", 100, 50)
     bad_car = UnreliableCar("Bad Car", 100, 30)
 
+    print(good_car)
+    for i in range(5):
+        distance_driven = good_car.drive(20)
+        print(f"Attempt {i+1}: Drove {distance_driven} km")
+    print(good_car)
 
+
+main()
