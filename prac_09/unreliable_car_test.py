@@ -17,5 +17,16 @@ def main():
         print(f"Attempt {i+1}: Drove {distance_driven} km")
     print(good_car)
 
+    print(weird_car)
+    for i in range(5):
+        distance_driven = weird_car.drive(20)
+        print(f"Attempt {i + 1}: Drove {distance_driven} km")
+    print(weird_car)
+
+    print(bad_car)
+    for i in range(5):
+        distance_driven = bad_car.drive(20)
+        print(f"Attempt {i + 1}: Drove {distance_driven} km")
+    print(bad_car)
 
 main()
