@@ -21,6 +21,7 @@ def main():
 
     while choice != 'q':
         if choice == 'c':
+            current_taxi =  choose_taxi(taxis)
         elif choice == 'd':
         else:
             print("invalid choice")
@@ -40,4 +41,19 @@ def display_taxis(taxis):
         print(f"{i} - {taxi}")
 
 
-def
+def choose_taxi(taxis):
+    """Allows the user to choose a taxi"""
+    print("Taxis available: ")
+    display_taxis(taxis)
+    try:
+        taxi_choice = int(input("Choose taxi: "))
+        if taxi_choice < 0 or taxi_choice >= len(taxis):
+            print("invalid taxi choice")
+            return None
+        return taxis[taxi_choice]
+    except ValueError:
+        print("invalid taxi choice")
+        return None
+
+
+main()
