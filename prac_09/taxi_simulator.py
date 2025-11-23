@@ -28,9 +28,16 @@ def main():
         print(f"Bill to date: ${bill:.2f}")
         menu = input("q)uit, c)hoose taxi, d)rive\n>>> ").lower()
 
+    print(f"Total trip cost: ${bill:.2f}")
+    print("Taxis are now:")
+    display_taxis(taxis)
+
 
 
 def display_taxis(taxis):
     """Display all taxis"""
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
+
+
+def
