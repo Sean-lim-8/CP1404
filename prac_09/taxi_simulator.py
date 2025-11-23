@@ -23,6 +23,7 @@ def main():
         if choice == 'c':
             current_taxi =  choose_taxi(taxis)
         elif choice == 'd':
+            bill += drive_taxi(current_taxi)
         else:
             print("invalid choice")
 
@@ -55,5 +56,22 @@ def choose_taxi(taxis):
         print("invalid taxi choice")
         return None
 
+
+def drive_taxi(current_taxi):
+    """Drive the taxi and return the fare"""
+    if current_taxi is None:
+        print("You need to choose a taxi before you can drive")
+        return 0.0
+
+    try:
+        distance = int(input("Drive how far? "))
+        current_taxi.start_fare()
+        current_taxi.drive(distance)
+        fare = current_taxi.get_fare()
+        print(f"Your {current_taxi.name} trip cost you ${fare:.2f}")
+        return fare
+    except ValueError:
+        print("Invalid distance")
+        return 0.0
 
 main()
