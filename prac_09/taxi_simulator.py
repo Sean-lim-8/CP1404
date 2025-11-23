@@ -28,7 +28,7 @@ def main():
             print("invalid choice")
 
         print(f"Bill to date: ${bill:.2f}")
-        menu = input("q)uit, c)hoose taxi, d)rive\n>>> ").lower()
+        choice = input("q)uit, c)hoose taxi, d)rive\n>>> ").lower()
 
     print(f"Total trip cost: ${bill:.2f}")
     print("Taxis are now:")
