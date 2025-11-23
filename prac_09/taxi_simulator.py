@@ -17,3 +17,14 @@ def main():
 
     print("Let's drive!")
 
+    choice = input("q)uit, c)hoose taxi, d)rive\n>>> ").lower()
+
+    while choice != 'q':
+        if choice == 'c':
+        elif choice == 'd':
+        else:
+            print("invalid choice")
+
+        print(f"Bill to date: ${bill:.2f}")
+        menu = input("q)uit, c)hoose taxi, d)rive\n>>> ").lower()
+
