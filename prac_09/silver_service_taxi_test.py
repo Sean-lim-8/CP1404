@@ -15,4 +15,8 @@ class SilverServiceTaxi(Taxi):
         self.fanciness = fanciness
         self.price_per_km = Taxi.price_per_km * fanciness
 
+    def __str__(self):
+        """returns a string representation of the Taxi instance."""
+        return f"{super().__str__()} plus flagfall of ${self.flagfall:.2f}"
+
 
